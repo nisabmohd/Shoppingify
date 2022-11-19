@@ -2,8 +2,14 @@ import "../css/Cart.css";
 import bottle from "../assets/source.svg";
 import trolly from "../assets/trolly.svg";
 import { padding } from "@mui/system";
+import { AppContext } from "../App";
+import { useContext } from "react";
 
 export function Cart() {
+  const context = useContext(AppContext);
+  console.log("====================================");
+  console.log(context);
+  console.log("====================================");
   return (
     <div className="cart">
       <div className="item_select">
@@ -42,7 +48,9 @@ export function Cart() {
                 padding: "10px 10px",
                 fontWeight: "bold",
                 borderRadius: "9px",
+                cursor: "pointer",
               }}
+              onClick={() => context.toggleRight(1)}
             >
               Add item
             </button>

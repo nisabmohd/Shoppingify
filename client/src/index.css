@@ -24,3 +24,7 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+.form:focus {
+    outline-color: rgb(249, 161, 9);
+}

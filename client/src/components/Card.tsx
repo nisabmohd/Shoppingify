@@ -6,6 +6,7 @@ export type Item = {
 type CardProp = {
   item: Item;
 };
+
 import AddIcon from "@mui/icons-material/Add";
 
 export function Card({ item }: CardProp) {

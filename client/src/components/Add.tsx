@@ -1,3 +1,4 @@
+import { FormControl, MenuItem, Select } from "@mui/material";
 import "../css/Cart.css";
 
 export function Add() {
@@ -13,68 +14,147 @@ export function Add() {
 
         <div className="inputs">
           <div
-            style={{ display: "flex", flexDirection: "column" }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              marginTop: "30px",
+            }}
             className="input-box"
           >
-            <label htmlFor="name">Name</label>
+            <label style={labeStyle} htmlFor="name">
+              Name
+            </label>
             <input
+              className="form"
               style={{
                 height: "55px",
                 borderRadius: "8px",
                 border: "2px solid #BDBDBD",
+                marginTop: "12px",
+                padding: "5px 8px",
+                fontSize: "14px",
+                background: "transparent",
               }}
               type="text"
               id="name"
+              autoComplete="off"
               placeholder="Enter a name"
             />
           </div>
           <div
-            style={{ display: "flex", flexDirection: "column" }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              marginTop: "30px",
+            }}
             className="input-box"
           >
-            <label htmlFor="name">Note (optional)</label>
+            <label style={labeStyle} htmlFor="note">
+              Note (optional)
+            </label>
             <textarea
+              className="form"
               style={{
                 height: "95px",
                 borderRadius: "8px",
                 border: "2px solid #BDBDBD",
                 resize: "none",
+                marginTop: "12px",
+                padding: "10px 8px",
+                fontSize: "14px",
+                background: "transparent",
               }}
-              id="name"
-              placeholder="Enter a name"
+              id="note"
+              placeholder="Enter a note"
             />
           </div>
           <div
-            style={{ display: "flex", flexDirection: "column" }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              marginTop: "30px",
+            }}
             className="input-box"
           >
-            <label htmlFor="name">Image (optional)</label>
+            <label style={labeStyle} htmlFor="img">
+              Image (optional)
+            </label>
             <input
+              className="form"
               style={{
                 height: "55px",
                 borderRadius: "8px",
                 border: "2px solid #BDBDBD",
+                marginTop: "12px",
+                padding: "5px 8px",
+                fontSize: "14px",
+                background: "transparent",
               }}
+              autoComplete="off"
               type="text"
-              id="name"
-              placeholder="Enter a name"
+              id="img"
+              placeholder="Enter a url"
             />
           </div>
           <div
-            style={{ display: "flex", flexDirection: "column" }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              marginTop: "30px",
+            }}
             className="input-box"
           >
-            <label htmlFor="name">Category</label>
-            <input
-              style={{
-                height: "55px",
-                borderRadius: "8px",
-                border: "2px solid #BDBDBD",
+            <label style={labeStyle} htmlFor="cat">
+              Category
+            </label>
+            <FormControl
+              sx={{
+                width: "100%",
+                marginTop: "12px",
+                border: "1px solid #BDBDBD",
+                borderRadius: "10px",
+                outline: "none",
               }}
-              type="text"
-              id="name"
-              placeholder="Enter a name"
-            />
+            >
+              <Select
+                displayEmpty
+                inputProps={{
+                  "aria-label": "Without label",
+                }}
+                sx={{ border: "none", outline: "none" }}
+              >
+                <MenuItem
+                  style={{
+                    margin: "7px 5px",
+                    borderRadius: "8px",
+                    padding: "10px",
+                  }}
+                  value={10}
+                >
+                  Fruits and vegetables
+                </MenuItem>
+                <MenuItem
+                  style={{
+                    margin: "7px 5px",
+                    borderRadius: "8px",
+                    padding: "10px",
+                  }}
+                  value={20}
+                >
+                  Meat and Fish
+                </MenuItem>
+                <MenuItem
+                  style={{
+                    margin: "7px 5px",
+                    borderRadius: "8px",
+                    padding: "10px",
+                  }}
+                  value={30}
+                >
+                  Thirty
+                </MenuItem>
+              </Select>
+            </FormControl>
           </div>
         </div>
         <div
@@ -99,7 +179,7 @@ export function Add() {
               cursor: "pointer",
             }}
           >
-            delete
+            cancel
           </button>
           <button
             style={{
@@ -114,10 +194,14 @@ export function Add() {
               cursor: "pointer",
             }}
           >
-            Add to list
+            Save
           </button>
         </div>
       </div>
     </div>
   );
 }
+const labeStyle = {
+  fontWeight: "bold",
+  fontSize: "13px",
+};
