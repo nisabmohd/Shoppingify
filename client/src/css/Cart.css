@@ -1,5 +1,61 @@
-.cart{
-    background-color: #FFF0DE;
+.cart {
     height: 100vh;
     flex: 1;
+    min-width: 400px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
+}
+
+.item_select {
+    background-color: #FFF0DE;
+    height: 85%;
+    padding-top: 35px;
+}
+
+.save_name {
+    background-color: white;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input {
+    width: 82%;
+    height: 60px;
+    border: 2px solid #C1C1C4;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.input input {
+    height: inherit;
+    width: 75%;
+    border: none;
+    outline: none;
+    padding: 0 12px;
+    font-size: 15px;
+}
+
+.input button {
+    height: inherit;
+    width: 25%;
+    border: none;
+    outline: none;
+    background-color: #C1C1C4;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.not_find {
+    width: 80%;
+    background-color: #80485B;
+    border-radius: 12px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
 }

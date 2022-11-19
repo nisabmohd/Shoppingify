@@ -4,6 +4,23 @@
     font-family: 'Quicksand', sans-serif;
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: #FAFAFE;
+}
+
+.container {
+    flex: 3.25;
+    padding: 3.3vh 4vw;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }

@@ -1,0 +1,150 @@
+{
+    "item1": {
+        "category": "Fruits and vegetables",
+        "item": [
+            {
+                "name": "Avacado",
+                "id": 1
+            },
+            {
+                "name": "Banana",
+                "id": 2
+            },
+            {
+                "name": "Carrot",
+                "id": 3
+            },
+            {
+                "name": "Fish",
+                "id": 4
+            },
+            {
+                "name": "Chicken",
+                "id": 5
+            },
+            {
+                "name": "Pre-cooked Corn",
+                "id": 6
+            },
+            {
+                "name": "Mandarin Nadorcott",
+                "id": 7
+            },
+            {
+                "name": "Watermelon",
+                "id": 8
+            }
+        ]
+    },
+    "item2": {
+        "category": "Meat and Fish",
+        "item": [
+            {
+                "name": "Avacado",
+                "id": 1
+            },
+            {
+                "name": "Banana",
+                "id": 2
+            },
+            {
+                "name": "Carrot",
+                "id": 3
+            },
+            {
+                "name": "Fish",
+                "id": 4
+            },
+            {
+                "name": "Chicken",
+                "id": 5
+            },
+            {
+                "name": "Pre-cooked Corn",
+                "id": 6
+            },
+            {
+                "name": "Mandarin Nadorcott",
+                "id": 7
+            },
+            {
+                "name": "Watermelon",
+                "id": 8
+            }
+        ]
+    },
+    "item3": {
+        "category": "Fruits and vegetables",
+        "item": [
+            {
+                "name": "Avacado",
+                "id": 1
+            },
+            {
+                "name": "Banana",
+                "id": 2
+            },
+            {
+                "name": "Carrot",
+                "id": 3
+            },
+            {
+                "name": "Fish",
+                "id": 4
+            },
+            {
+                "name": "Chicken",
+                "id": 5
+            },
+            {
+                "name": "Pre-cooked Corn",
+                "id": 6
+            },
+            {
+                "name": "Mandarin Nadorcott",
+                "id": 7
+            },
+            {
+                "name": "Watermelon",
+                "id": 8
+            }
+        ]
+    },
+    "item4": {
+        "category": "Fruits and vegetables",
+        "item": [
+            {
+                "name": "Avacado",
+                "id": 1
+            },
+            {
+                "name": "Banana",
+                "id": 2
+            },
+            {
+                "name": "Carrot",
+                "id": 3
+            },
+            {
+                "name": "Fish",
+                "id": 4
+            },
+            {
+                "name": "Chicken",
+                "id": 5
+            },
+            {
+                "name": "Pre-cooked Corn",
+                "id": 6
+            },
+            {
+                "name": "Mandarin Nadorcott",
+                "id": 7
+            },
+            {
+                "name": "Watermelon",
+                "id": 8
+            }
+        ]
+    }
+}
