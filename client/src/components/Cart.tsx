@@ -4,6 +4,7 @@ import trolly from "../assets/trolly.svg";
 import { AppContext } from "../App";
 import { useContext } from "react";
 import { Item } from "./Card";
+import EditIcon from "@mui/icons-material/Edit";
 
 type cartProps = {
   cartItems: Item[];
@@ -12,7 +13,7 @@ type cartProps = {
 export function Cart({ cartItems }: cartProps) {
   const context = useContext(AppContext);
 
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <div className="cart">
@@ -102,8 +103,20 @@ export function Cart({ cartItems }: cartProps) {
           </>
         ) : (
           // cartItems render
-          <div style={{ width: "80%", margin: "auto", marginTop: "25px" }}>
-            <h2 style={{ fontSize: "21px" }}>Shopping list</h2>
+          <div style={{ width: "80%", margin: "auto", marginTop: "45px" }}>
+            <div
+              className="header_cart_items"
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginBottom: "25px",
+              }}
+            >
+              <h2 style={{ fontSize: "21px" }}>Shopping list</h2>
+              <EditIcon sx={{ fontSize: "20px", marginBottom: "-5px" }} />
+            </div>
             {cartItems.map((item) => (
               <pre
                 style={{ fontWeight: "bold", marginTop: "12px" }}

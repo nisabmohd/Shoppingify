@@ -107,6 +107,7 @@ export function Details({ selected }: detailsProp) {
             delete
           </button>
           <button
+            onClick={() => context.AddToCart(selected)}
             style={{
               fontWeight: "bold",
               border: "none",

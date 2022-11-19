@@ -45,21 +45,12 @@ export function Card({ item }: CardProp) {
           backgroundColor: "transparent",
           border: "none",
           outline: "none",
-          marginRight: "13px",
           cursor: "pointer",
+          marginRight: "14px",
         }}
+        onClick={(e) => handleAdd(e)}
       >
-        <button
-          style={{
-            backgroundColor: "transparent",
-            border: "none",
-            outline: "none",
-            cursor: "pointer",
-          }}
-          onClick={(e) => handleAdd(e)}
-        >
-          <AddIcon sx={{ color: "#C1C1C4", marginTop: "6px" }} />
-        </button>
+        <AddIcon sx={{ color: "#C1C1C4", marginTop: "6px" }} />
       </button>
     </div>
   );

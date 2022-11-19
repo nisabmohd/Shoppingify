@@ -30,6 +30,8 @@ function App() {
     setShowCart(false);
   }
   function AddToCart(item: Item) {
+    setShowCart(true);
+    setSelected(undefined);
     setCartItems((cartItems) => [...cartItems, item]);
   }
 
@@ -48,7 +50,6 @@ function App() {
           <Route path="/history" element={<History />} />
           <Route path="/statistics" element={<Statistics />} />
         </Routes>
-
         {showAdd && <Add />}
         {selected && <Details selected={selected} />}
         {showCart && <Cart cartItems={cartItems} />}
