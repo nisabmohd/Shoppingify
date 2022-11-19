@@ -1,6 +1,9 @@
 export type Item = {
   name: string;
   id: number;
+  note?: string;
+  category: string;
+  img?: string;
 };
 
 type CardProp = {
@@ -8,10 +11,20 @@ type CardProp = {
 };
 
 import AddIcon from "@mui/icons-material/Add";
+import { AppContext } from "../App";
+import { useContext } from "react";
 
 export function Card({ item }: CardProp) {
+  const context = useContext(AppContext);
+
+  const handleAdd = (e: any) => {
+    e.stopPropagation();
+    context.AddToCart(item);
+  };
+
   return (
     <div
+      onClick={() => context.handleSelect(item)}
       style={{
         display: "flex",
         flexDirection: "row",
@@ -23,6 +36,7 @@ export function Card({ item }: CardProp) {
         boxShadow: "0px 2px 12px rgba(0, 0, 0, 0.05)",
         borderRadius: "12px",
         margin: "10px 5px",
+        cursor: "pointer",
       }}
     >
       <h4 style={{ marginLeft: "19px" }}>{item.name}</h4>
@@ -35,7 +49,17 @@ export function Card({ item }: CardProp) {
           cursor: "pointer",
         }}
       >
-        <AddIcon sx={{ color: "#C1C1C4", marginTop: "6px" }} />
+        <button
+          style={{
+            backgroundColor: "transparent",
+            border: "none",
+            outline: "none",
+            cursor: "pointer",
+          }}
+          onClick={(e) => handleAdd(e)}
+        >
+          <AddIcon sx={{ color: "#C1C1C4", marginTop: "6px" }} />
+        </button>
       </button>
     </div>
   );

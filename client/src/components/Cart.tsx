@@ -4,12 +4,17 @@ import trolly from "../assets/trolly.svg";
 import { padding } from "@mui/system";
 import { AppContext } from "../App";
 import { useContext } from "react";
+import { Item } from "./Card";
 
-export function Cart() {
+type cartProps = {
+  cartItems: Item[];
+};
+
+export function Cart({ cartItems }: cartProps) {
   const context = useContext(AppContext);
-  console.log("====================================");
-  console.log(context);
-  console.log("====================================");
+
+  console.log(cartItems);
+
   return (
     <div className="cart">
       <div className="item_select">
@@ -50,7 +55,7 @@ export function Cart() {
                 borderRadius: "9px",
                 cursor: "pointer",
               }}
-              onClick={() => context.toggleRight(1)}
+              onClick={() => context.toggleAddMenu(true)}
             >
               Add item
             </button>
@@ -58,41 +63,59 @@ export function Cart() {
         </div>
 
         {/* conditional render when nothing selected */}
-        <div
-          className="no_item"
-          style={{
-            height: "80%",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            position: "relative",
-          }}
-        >
-          <p
-            style={{
-              color: "black",
-              fontSize: "18px",
-              fontWeight: "bold",
-              marginTop: "-8vh",
-            }}
-          >
-            No items
-          </p>
-        </div>
-        <div
-          className="trolly_img"
-          style={{
-            position: "absolute",
-            bottom: 115,
-            right: "69px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <img style={{ margin: "auto" }} src={trolly} alt="" />
-        </div>
+        {cartItems.length == 0 ? (
+          <>
+            <div
+              className="no_item"
+              style={{
+                height: "80%",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                position: "relative",
+              }}
+            >
+              <p
+                style={{
+                  color: "black",
+                  fontSize: "18px",
+                  fontWeight: "bold",
+                  marginTop: "-8vh",
+                }}
+              >
+                No items
+              </p>
+            </div>
+            <div
+              className="trolly_img"
+              style={{
+                position: "absolute",
+                bottom: 115,
+                right: "69px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <img style={{ margin: "auto" }} src={trolly} alt="" />
+            </div>
+          </>
+        ) : (
+          // cartItems render
+          <div style={{ width: "80%", margin: "auto", marginTop: "25px" }}>
+            <h2 style={{ fontSize: "21px" }}>Shopping list</h2>
+            {cartItems.map((item) => (
+              <pre
+                style={{ fontWeight: "bold", marginTop: "12px" }}
+                key={item.id}
+              >
+                {item.name}
+              </pre>
+            ))}
+          </div>
+        )}
+
         {/*  */}
       </div>
       <div className="save_name">

@@ -1,6 +1,6 @@
 import { Card, Item } from "./Card";
 
-type CategoryProps = {
+export type CategoryProps = {
   name: string;
   data: Item[];
 };

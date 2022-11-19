@@ -7,16 +7,36 @@ import { History } from "./pages/History";
 import { Add } from "./components/Add";
 import { Details } from "./components/Details";
 import { createContext, useState } from "react";
+import { Item } from "./components/Card";
 
 export const AppContext = createContext<any>({});
 
 function App() {
-  const [rightActive, setRightActive] = useState<number>(3);
-  function toggleRight(item: number) {
-    setRightActive(item);
+  const [showCart, setShowCart] = useState<boolean>(true);
+  const [showAdd, setShowAdd] = useState<boolean>(false);
+  const [selected, setSelected] = useState<Item>();
+  const [cartItems, setCartItems] = useState<Item[]>([]);
+
+  function toggleAddMenu(value: boolean) {
+    setShowCart(!value);
+    setShowAdd(value);
   }
+
+  function handleSelect(item: Item | undefined) {
+    setSelected(item);
+    if (!item) {
+      return setShowCart(true);
+    }
+    setShowCart(false);
+  }
+  function AddToCart(item: Item) {
+    setCartItems((cartItems) => [...cartItems, item]);
+  }
+
   const contextValue = {
-    toggleRight,
+    handleSelect,
+    toggleAddMenu,
+    AddToCart,
   };
 
   return (
@@ -29,9 +49,9 @@ function App() {
           <Route path="/statistics" element={<Statistics />} />
         </Routes>
 
-        {rightActive === 1 && <Add />}
-        {rightActive === 2 && <Details />}
-        {rightActive === 3 && <Cart />}
+        {showAdd && <Add />}
+        {selected && <Details selected={selected} />}
+        {showCart && <Cart cartItems={cartItems} />}
       </div>
     </AppContext.Provider>
   );

@@ -1,7 +1,15 @@
 import "../css/Cart.css";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import { Item } from "./Card";
+import { AppContext } from "../App";
+import { useContext } from "react";
 
-export function Details() {
+type detailsProp = {
+  selected: Item | undefined;
+};
+
+export function Details({ selected }: detailsProp) {
+  const context = useContext(AppContext);
   return (
     <div
       className="cart"
@@ -17,10 +25,12 @@ export function Details() {
       >
         <div
           className="navigate_back"
+          onClick={() => context.handleSelect(undefined)}
           style={{
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
+            cursor: "pointer",
           }}
         >
           <KeyboardBackspaceIcon
@@ -39,37 +49,35 @@ export function Details() {
         </div>
 
         <div className="image" style={{ marginTop: "45px" }}>
-          <img
-            style={{
-              width: "100%",
-              borderRadius: "17px",
-              height: "220px",
-              objectFit: "cover",
-            }}
-            src="https://wp.inews.co.uk/wp-content/uploads/2021/11/PRI_212086616.jpg?resize=2048,1366&strip=all&quality=90"
-            alt=""
-          />
+          {selected?.img && (
+            <img
+              style={{
+                width: "100%",
+                borderRadius: "17px",
+                height: "220px",
+                objectFit: "cover",
+              }}
+              src={selected?.img}
+              alt=""
+            />
+          )}
         </div>
 
         <div className="details" style={{ marginTop: "55px" }}>
           <div className="name" style={{ marginTop: "15px" }}>
             <p style={titleStyle}>name</p>
-            <p style={{ ...dataStyle, fontSize: "18px" }}>Avacado</p>
+            <p style={{ ...dataStyle, fontSize: "18px" }}>{selected?.name}</p>
           </div>
           <div className="cat" style={{ marginTop: "15px" }}>
             <p style={titleStyle}>category</p>
             <p style={{ ...dataStyle, fontSize: "16.25px" }}>
-              Fruits and vegetables
+              {selected?.category}
             </p>
           </div>
           <div className="note" style={{ marginTop: "15px" }}>
             <p style={titleStyle}>note</p>
             <p style={{ ...dataStyle, fontSize: "15.5px" }}>
-              Nutrient-dense foods are those that provide substantial amounts of
-              vitamins, minerals and other nutrients with relatively few
-              calories. One-third of a medium avocado (50 g) has 80 calories and
-              contributes nearly 20 vitamins and minerals, making it a great
-              nutrient-dense food choice.{" "}
+              {selected?.note ? selected.note : "-"}
             </p>
           </div>
         </div>

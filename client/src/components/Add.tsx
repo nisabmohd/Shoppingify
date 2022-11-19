@@ -1,7 +1,10 @@
 import { FormControl, MenuItem, Select } from "@mui/material";
+import { AppContext } from "../App";
 import "../css/Cart.css";
+import { useContext } from "react";
 
 export function Add() {
+  const context = useContext(AppContext);
   return (
     <div className="cart" style={{ boxShadow: "none", position: "relative" }}>
       <div
@@ -169,6 +172,7 @@ export function Add() {
           }}
         >
           <button
+            onClick={() => context.toggleAddMenu(false)}
             style={{
               fontWeight: "bold",
               border: "none",
