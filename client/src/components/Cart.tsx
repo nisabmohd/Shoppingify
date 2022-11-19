@@ -1,7 +1,6 @@
 import "../css/Cart.css";
 import bottle from "../assets/source.svg";
 import trolly from "../assets/trolly.svg";
-import { padding } from "@mui/system";
 import { AppContext } from "../App";
 import { useContext } from "react";
 import { Item } from "./Card";
