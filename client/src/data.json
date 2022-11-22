@@ -3,56 +3,56 @@
         "category": "Fruits and vegetables",
         "items": [
             {
-                "id": 11,
+                "id": "11",
                 "name": "Avacado",
                 "category": "Fruits and vegetables",
                 "img": "https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/is-avocado-a-fruit-or-a-vegetable-1296x728-feature.jpg?w=1155&h=1528",
                 "note": "Nutrient-dense foods are those that provide substantial amounts of vitamins, minerals and other nutrients with relatively few calories. One-third of a medium avocado (50 g) has 80 calories and contributes nearly 20 vitamins and minerals, making it a great nutrient-dense food choice. "
             },
             {
-                "id": 12,
+                "id": "12",
                 "name": "Pumkin",
                 "category": "Fruits and vegetables",
                 "img": "https://st2.depositphotos.com/1167801/5249/i/600/depositphotos_52498055-stock-photo-pumpkin.jpg",
                 "note": "Pumpkins, which produce very long annual vines, are planted individually or in twos or threes on little hills about 2.5 to 3 metres (8 to 10 feet) apart. Botanically, pumpkin fruits are a type of berry known as a pepo. They are generally large, 4–8 kg (9–18 pounds) or more, though some varieties are very small. The largest pumpkins are varieties of C. "
             },
             {
-                "id": 13,
+                "id": "13",
                 "name": "Watemelon",
                 "category": "Fruits and vegetables",
                 "img": "https://i0.wp.com/post.healthline.com/wp-content/uploads/2021/11/watermelon-1296x728-header-1.jpg?w=1155&h=1528",
                 "note": "Watermelon is grown in favorable climates from tropical to temperate regions worldwide for its large edible fruit, which is a berry with a hard rind and no internal divisions, and is botanically called a pepo. The sweet, juicy flesh is usually deep red to pink, with many black seeds, although seedless varieties exist."
             },
             {
-                "id": 14,
+                "id": "14",
                 "name": "Corn",
                 "category": "Fruits and vegetables",
                 "img": "https://m.economictimes.com/thumb/msid-83390480,width-1200,height-900,resizemode-4,imgsize-176599/istock-1061097354.jpg",
                 "note": "Maize has become a staple food in many parts of the world, with the total production of maize surpassing that of wheat or rice. In addition to being consumed directly by humans (often in the form of masa), maize is also used for corn ethanol, animal feed and other maize products, such as corn starch and corn syrup."
             },
             {
-                "id": 15,
+                "id": "15",
                 "name": "Carrot",
                 "category": "Fruits and vegetables",
                 "img": "https://www.healthshots.com/wp-content/uploads/2020/11/benefits-of-carrots.jpg",
                 "note": "The carrot is a biennial plant in the umbellifer family, Apiaceae. At first, it grows a rosette of leaves while building up the enlarged taproot. Fast-growing cultivars mature within three months (90 days) of sowing the seed, while slower-maturing cultivars need a month longer (120 days). "
             },
             {
-                "id": 16,
+                "id": "16",
                 "name": "Banana",
                 "category": "Fruits and vegetables",
                 "img": "https://api.time.com/wp-content/uploads/2019/11/gettyimages-459761948.jpg",
                 "note": "banana is an elongated, edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa. In some countries, bananas used for cooking may be called plantains, distinguishing them from dessert bananas. The fruit is variable in size, color, and firmness, but is usually elongated and curved, with soft flesh rich in starch covered with a rind, which may be green, yellow, red, purple, or brown when ripe "
             },
             {
-                "id": 17,
+                "id": "17",
                 "name": "Spinach",
                 "category": "Fruits and vegetables",
                 "img": "https://www.maangchi.com/wp-content/uploads/2007/09/spinach-1.jpg",
                 "note": "Spinach is a leafy green flowering plant native to central and western Asia. It is of the order Caryophyllales, family Amaranthaceae, subfamily Chenopodioideae. Its leaves are a common edible vegetable consumed either fresh, or after storage using preservation techniques by canning, freezing, or dehydration."
             },
             {
-                "id": 18,
+                "id": "18",
                 "name": "Peas",
                 "category": "Fruits and vegetables",
                 "img": "https://img.freepik.com/free-photo/peas-pod-top-view_23-2148893673.jpg?w=2000",
@@ -64,28 +64,28 @@
         "category": "Meat and fish",
         "items": [
             {
-                "id": 21,
+                "id": "21",
                 "name": "Chicken",
                 "category": "Meat and fish",
                 "img": "https://assets.tendercuts.in/product/C/H/7bfc5e2d-3857-4f3e-a736-222c7a617b67.webp",
                 "note": "Chicken has tryptophan, an amino acid that is responsible for raising serotonin levels in your brain. Serotonin is the “feel-good” neurochemical linked with mood"
             },
             {
-                "id": 22,
+                "id": "22",
                 "name": "Sardins",
                 "category": "Meat and fish",
                 "img": "https://health.clevelandclinic.org/wp-content/uploads/sites/3/2017/08/goodFish-688588662-770x533-1-650x428.jpg",
                 "note": "sardine, any of certain food fishes of the herring family, Clupeidae, especially members of the genera Sardina, Sardinops, and Sardinella; the name sardine can also refer to the common herring and to other small herrings or herringlike fishes when canned in oil. The European sardine known as pilchard in Britain."
             },
             {
-                "id": 23,
+                "id": "23",
                 "name": "Salmon",
                 "category": "Meat and fish",
                 "img": "https://post.healthline.com/wp-content/uploads/2021/12/salmon-fillet-fillets-732x549-thumbnail-732x549.jpg",
                 "note": "Salmon are typically anadromous: they hatch in the gravel beds of shallow fresh water streams, migrate to the ocean as adults and live like sea fish, then return to fresh water to reproduce. However, populations of several species are restricted to fresh water throughout their lives. Folklore has it that the fish return to the exact spot where they hatched to spawn, and tracking studies have shown this to be mostly true"
             },
             {
-                "id": 24,
+                "id": "24",
                 "name": "Meat",
                 "category": "Meat and fish",
                 "img": "https://staticfanpage.akamaized.net/wp-content/uploads/sites/22/2020/06/iStock-1141704314-1200x675.jpg",
@@ -97,25 +97,25 @@
         "category": "Beverages",
         "items": [
             {
-                "id": 31,
+                "id": "31",
                 "name": "Juice",
                 "category": "Beverages",
                 "img": "https://www.thelittleepicurean.com/wp-content/uploads/2021/03/passionfruit-juice-1-700x1050.jpg"
             },
             {
-                "id": 32,
+                "id": "32",
                 "name": "Coke",
                 "category": "Beverages",
                 "img": "https://www.beveragedaily.com/var/wrbm_gb_food_pharma/storage/images/_aliases/wrbm_large/publications/food-beverage-nutrition/beveragedaily.com/article/2019/07/12/diet-coke-helps-boost-coca-cola-s-brand-value-brand-finance-rankings/9912727-1-eng-GB/Diet-Coke-helps-boost-Coca-Cola-s-brand-value-Brand-Finance-rankings.jpg"
             },
             {
-                "id": 33,
+                "id": "33",
                 "name": "Cofee",
                 "category": "Beverages",
                 "img": "https://www.worldatlas.com/r/w1200/upload/12/f8/83/coffee-cup.jpg"
             },
             {
-                "id": 34,
+                "id": "34",
                 "name": "Lemonade",
                 "category": "Beverages",
                 "img": "https://www.worldvision.org/wp-content/uploads/2017/07/Lime-Soda-167-850x568.jpg"
@@ -126,7 +126,7 @@
         "category": "Pets",
         "items": [
             {
-                "id": 41,
+                "id": "41",
                 "name": "Oats",
                 "category": "Pets",
                 "img": "https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/06/dog-food-1296x728-header.jpg?w=1155&h=1528",
@@ -138,7 +138,7 @@
         "category": "Misc",
         "items": [
             {
-                "id": 51,
+                "id": "51",
                 "name": "Needle",
                 "category": "Misc"
             }
