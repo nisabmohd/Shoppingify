@@ -28,3 +28,12 @@ body {
 .form:focus {
     outline-color: rgb(249, 161, 9);
 }
+
+.hidescroll::-webkit-scrollbar {
+    display: none;
+}
+
+.hidescroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

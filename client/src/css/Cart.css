@@ -22,7 +22,6 @@
 .input {
     width: 82%;
     height: 60px;
-    border: 2px solid #C1C1C4;
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -44,7 +43,6 @@
     width: 25%;
     border: none;
     outline: none;
-    background-color: #C1C1C4;
     border-radius: 10px;
     color: white;
     font-weight: bold;

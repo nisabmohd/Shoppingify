@@ -2,7 +2,7 @@ import { Category } from "./Category";
 import data from "../data.json";
 
 export function Data() {
-  console.log(data);
+  // console.log(data);
   return (
     <div
       style={{

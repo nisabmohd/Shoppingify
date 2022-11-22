@@ -6,7 +6,11 @@ import ReplayIcon from "@mui/icons-material/Replay";
 import AssessmentOutlinedIcon from "@mui/icons-material/AssessmentOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
-export function Leftbar() {
+type count = {
+  count: number;
+};
+
+export function Leftbar({ count }: count) {
   return (
     <div className="leftbar">
       <div className="logo" style={{ marginTop: "4vh" }}>
@@ -58,7 +62,10 @@ export function Leftbar() {
           />
         </NavLink>
       </div>
-      <div className="cart_icon" style={{ marginBottom: "3.85vh" }}>
+      <div
+        className="cart_icon"
+        style={{ marginBottom: "3.85vh", position: "relative" }}
+      >
         <button
           className="cart_btn"
           style={{
@@ -71,6 +78,21 @@ export function Leftbar() {
             height: "45px",
           }}
         >
+          {count !== 0 && (
+            <p
+              style={{
+                position: "absolute",
+                top: "-3px",
+                right: "-3px",
+                backgroundColor: "#EB5757",
+                color: "white",
+                padding: "3px 5.95px",
+                borderRadius: "4px",
+              }}
+            >
+              {count}
+            </p>
+          )}
           <ShoppingCartOutlinedIcon sx={{ color: "white" }} />
         </button>
       </div>
