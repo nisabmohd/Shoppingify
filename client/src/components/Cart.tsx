@@ -2,20 +2,34 @@ import "../css/Cart.css";
 import bottle from "../assets/source.svg";
 import trolly from "../assets/trolly.svg";
 import { AppContext, customCartType } from "../App";
-import { useContext } from "react";
+import { useContext, useMemo, useState } from "react";
 import { Item } from "./Card";
 import EditIcon from "@mui/icons-material/Edit";
 import { CartItemSelected } from "./CartItemSelected";
 
 type cartProps = {
-  cartItems: Item[];
   filtered: any;
   count: number;
+  name?: string;
 };
 
-export function Cart({ cartItems, filtered, count }: cartProps) {
+export function Cart({ filtered, count, name }: cartProps) {
   const context = useContext(AppContext);
+  const [cartName, setCartName] = useState<string>(name || "");
+  const cartItems = useMemo(() => {
+    let count = 0;
+    for (const key in filtered) {
+      count += filtered[key].length;
+    }
+    return count;
+  }, [filtered]);
 
+  async function saveCart() {
+    const newData = { ...filtered, name: cartName };
+    console.log(newData);
+    context.emptyCart();
+    context.showToast("Saved");
+  }
   // console.log(cartItems);
   // console.log(filtered);
 
@@ -67,7 +81,7 @@ export function Cart({ cartItems, filtered, count }: cartProps) {
         </div>
 
         {/* conditional render when nothing selected */}
-        {cartItems.length == 0 ? (
+        {cartItems == 0 ? (
           <>
             <div
               className="no_item"
@@ -257,10 +271,17 @@ export function Cart({ cartItems, filtered, count }: cartProps) {
               count > 0 ? "2px solid rgb(249, 161, 9)" : "2px solid #C1C1C4",
           }}
         >
-          <input type="text" placeholder="Enter a name" />
+          <input
+            value={cartName}
+            onChange={(e) => setCartName(e.target.value)}
+            type="text"
+            placeholder="Enter a name"
+          />
           <button
+            onClick={() => saveCart()}
             style={{
               backgroundColor: count > 0 ? "rgb(249, 161, 9)" : "#C1C1C4",
+              cursor: "pointer",
             }}
           >
             save

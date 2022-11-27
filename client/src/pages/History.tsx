@@ -1,7 +1,7 @@
 export function History() {
   return (
     <div className="container">
-      <h1>History</h1>
+      <h1>Shopping history</h1>
     </div>
   );
 }

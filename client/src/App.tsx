@@ -6,9 +6,15 @@ import { Statistics } from "./pages/Statistics";
 import { History } from "./pages/History";
 import { Add } from "./components/Add";
 import { Details } from "./components/Details";
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { Item } from "./components/Card";
 import { helper } from "./utils/seperator";
+import { Login } from "./pages/Login";
+import { Signup } from "./pages/Signup";
+import toast, { Toaster } from "react-hot-toast";
+import { Protected } from "./Routers/Protected";
+import { useAuth } from "./contexts/AuthContext";
+import useFetch from "./hooks/useFetch";
 
 export const AppContext = createContext<any>({});
 
@@ -22,11 +28,28 @@ export type customCartType = {
 };
 
 function App() {
+  //check useFetch hook
+  const [data, err, pending] = useFetch({
+    method: "get",
+    url: "https://jsonplaceholder.typicode.com/users",
+  });
+  console.log(data, err, pending);
+
   const [showCart, setShowCart] = useState<boolean>(true);
   const [showAdd, setShowAdd] = useState<boolean>(false);
   const [selected, setSelected] = useState<Item>();
   const [cartItems, setCartItems] = useState<customCartType[]>([]);
   const [filtered, setFilterd] = useState<object>({});
+  const { isAuth } = useAuth();
+  const [isAuthPage] = useState(() => {
+    if (
+      window.location.pathname == "/login" ||
+      window.location.pathname == "/signup"
+    ) {
+      return false;
+    }
+    return true;
+  });
 
   function toggleAddMenu(value: boolean) {
     setShowCart(!value);
@@ -92,16 +115,12 @@ function App() {
 
   function emptyCart() {
     setCartItems([]);
+    setFilterd({});
   }
 
-  function saveCart() {
-    //
-    emptyCart();
+  function showToast(msg: string) {
+    toast(msg);
   }
-
-  // function completeShopping(){
-
-  // }
 
   const contextValue = {
     handleSelect,
@@ -110,26 +129,35 @@ function App() {
     handleIncOrDecItem,
     handleDeleteItemCart,
     emptyCart,
-    saveCart,
+    showToast,
   };
 
   return (
     <AppContext.Provider value={contextValue}>
       <div className="App" style={{ display: "flex", flexDirection: "row" }}>
-        <Leftbar count={Object.keys(cartItems).length} />
+        <Toaster />
+        {isAuthPage && isAuth && (
+          <Leftbar count={Object.keys(cartItems).length} />
+        )}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <Protected>
+                <Home />
+              </Protected>
+            }
+          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/history" element={<History />} />
           <Route path="/statistics" element={<Statistics />} />
         </Routes>
-        {showAdd && <Add />}
-        {selected && <Details selected={selected} />}
-        {showCart && (
-          <Cart
-            count={Object.keys(cartItems).length}
-            filtered={filtered}
-            cartItems={cartItems}
-          />
+
+        {showAdd && isAuthPage && isAuth && <Add />}
+        {selected && isAuthPage && isAuth && <Details selected={selected} />}
+        {showCart && isAuthPage && isAuth && (
+          <Cart count={Object.keys(cartItems).length} filtered={filtered} />
         )}
       </div>
     </AppContext.Provider>
